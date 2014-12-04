@@ -8,8 +8,13 @@ using System.Threading.Tasks;
 
 namespace conpro
 {
+
+    
      static class sqlcn
     {
+
+         public static String sqlcmd;
+         
          
           // static string connectionString = "Data Source=(localdb)\\ProjectsV12;Initial Catalog=Database1;Integrated Security=True";
            // SqlConnection conn = new SqlConnection(connectionString);
@@ -18,7 +23,7 @@ namespace conpro
          public static DataTable GetSampleData()
          {
              SqlConnection connection = new SqlConnection(@"Data Source=(localdb)\ProjectsV12;Initial Catalog=Database1;Integrated Security=True");
-             SqlCommand cmd = new SqlCommand("Select * from users", connection);
+             SqlCommand cmd = new SqlCommand(Program.red, connection);    //("Select * from users", connection);
              SqlDataAdapter da = new SqlDataAdapter(cmd);
              DataSet ds = new DataSet();
 

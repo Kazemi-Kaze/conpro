@@ -10,15 +10,24 @@ namespace conpro
 {
     class Program
     {
+        public static string red = "Select * from users";
         static void Main(string[] args)
         {
 
+            red = Console.ReadLine();
             DataTable data = sqlcn.GetSampleData();
             foreach (DataRow row in data.Rows)
-            { 
-            Console.WriteLine(row[0].ToString());
-            Console.WriteLine();
+            {
+
+                for (int i = 0; i < data.Columns.Count; i++)
+                {
+                    Console.WriteLine(row[i].ToString()); 
+                }
+
+               
+
         }
+            
             Console.ReadKey();
 
           
